@@ -9,6 +9,7 @@ import del from 'del';
 import svgo from 'gulp-svgmin';
 import svgstore from 'gulp-svgstore';
 import imagemin from 'gulp-imagemin';
+import webp from 'imagemin-webp';
 import browser from 'browser-sync';
 
 
@@ -108,11 +109,16 @@ const copyImages = () => {
 // WebP
 const createWebp = () => {
   return gulp.src('source/img/**/*.{png,jpg}')
+    .pipe(plumber())
     .pipe(imagemin({
-      webp: {}
+      webp: {
+        quality: 75
+      }
     }))
     .pipe(gulp.dest('build/img'))
 }
+
+export { createWebp };
 
 // Build
 export const build = gulp.series(
