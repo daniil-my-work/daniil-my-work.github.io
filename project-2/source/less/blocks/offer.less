@@ -1,0 +1,104 @@
+.offer {
+  background-color: @color-main;
+}
+
+.offer__wrapper {
+  position: relative;
+  box-sizing: border-box;
+  width: 280px;
+  padding: 186px 58px 43px;
+  margin: 35px auto;
+  height: 290px;
+  background-image: url("../img/catalog/bg-offer.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (min-resolution: 2dppx) {
+  .offer__wrapper {
+    background-image: url("../img/catalog/bg-offer@2x.jpg");
+    background-size: 279px auto;
+  }
+}
+
+.offer__wrapper::before {
+  content: url("../../img/catalog/svg/icon_gift.svg");
+  position: absolute;
+  top: 60px;
+  left: calc(50% - 39px);
+  width: 78px;
+  height: 80px;
+  z-index: 2;
+}
+
+.offer__wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: @color-bg;
+}
+
+.offer__description {
+  position: absolute;
+  margin: 0;
+  font-family: @second-font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: @color-main;
+  z-index: 1;
+}
+
+@media (min-width: @tablet-width) {
+  .offer__wrapper {
+    width: 708px;
+    height: 200px;
+    margin: 70px auto 75px;
+    padding: 70px 124px 70px 422px;
+    background-image: url("../img/catalog/bg-offer-tablet.jpg");
+  }
+
+  @media (min-resolution: 2dppx) {
+    .offer__wrapper {
+      background-image: url("../img/catalog/bg-offer-tablet@2x.jpg");
+      background-size: 707px auto;
+    }
+  }
+
+  .offer__wrapper::before {
+    top: 57px;
+    left: 77px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .offer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .offer__wrapper {
+    width: 246px;
+    height: 289px;
+    padding: 184px 40px 42px;
+    margin: 0;
+    background-image: url("../img/catalog/bg-offer-desktop.jpg");
+  }
+
+  @media (min-resolution: 2dppx) {
+    .offer__wrapper {
+      background-image: url("../img/catalog/bg-offer-desktop@2x.jpg");
+      background-size: 245px auto;
+    }
+  }
+
+  .offer__wrapper::before {
+    top: 55px;
+  }
+}
